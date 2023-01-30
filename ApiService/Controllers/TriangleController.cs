@@ -21,9 +21,9 @@ namespace ApiService.Controllers
         }
 
         [HttpGet(Name = "GetFibonacci")]
-        public int GetFibonacci(int max)
+        public JsonResult GetFibonacci(int max)
         {
-            return _service.GetFibonacci(max);
+            return Json(_service.GetFibonacci(max));
         }
 
 

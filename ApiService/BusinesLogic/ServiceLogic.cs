@@ -41,8 +41,10 @@ namespace ApiService.BusinesLogic
 
         }
 
-        public int GetFibonacci(int max)
+        public FibonancciModel GetFibonacci(int max)
         {
+            string loop = "";
+
             int after0 = 0;
             int after = 0;
             int current = 0;
@@ -64,8 +66,10 @@ namespace ApiService.BusinesLogic
                     after0 = after;
                     after = current;
                 }
+
+                loop += $"{(current > 0 ? "," + current : current)}";
             }
-            return current;
+            return new FibonancciModel { Loop = loop, Toal = current };
         }
 
         public string ReverseWord(string word)
