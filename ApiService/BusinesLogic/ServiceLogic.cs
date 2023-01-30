@@ -69,7 +69,7 @@ namespace ApiService.BusinesLogic
 
                 loop += $"{(current > 0 ? "," + current : current)}";
             }
-            return new FibonancciModel { Loop = loop, Toal = current };
+            return new FibonancciModel { NumberList = loop, Toal = current };
         }
 
         public string ReverseWord(string word)

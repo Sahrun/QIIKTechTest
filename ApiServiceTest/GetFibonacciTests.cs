@@ -1,4 +1,5 @@
 using ApiService.BusinesLogic;
+using ApiService.ModelView;
 using Xunit;
 
 namespace ApiServiceTest
@@ -14,9 +15,16 @@ namespace ApiServiceTest
         [InlineData(3)]
         public void GetFibonacci_Input_3_Should_Return_1(int max)
         {
-            int result = _service.GetFibonacci(max);
+            FibonancciModel actual = _service.GetFibonacci(max);
 
-            Assert.Equal(1, result);
+            FibonancciModel expected = new FibonancciModel
+            {
+                NumberList = "0,1,1",
+                Toal = 1
+
+            };
+
+            Assert.Equal(new { expected.NumberList, expected.Toal }, new { actual.NumberList, actual.Toal });
 
         }
 
@@ -24,9 +32,16 @@ namespace ApiServiceTest
         [InlineData(10)]
         public void GetFibonacci_Input_10_Should_Return_34(int max)
         {
-            int result = _service.GetFibonacci(max);
+            FibonancciModel actual = _service.GetFibonacci(max);
 
-            Assert.Equal(34, result);
+            FibonancciModel expected = new FibonancciModel
+            {
+                NumberList = "0,1,1,2,3,5,8,13,21,34",
+                Toal = 34
+
+            };
+
+            Assert.Equal(new { expected.NumberList, expected.Toal }, new { actual.NumberList, actual.Toal });
 
         }
     }

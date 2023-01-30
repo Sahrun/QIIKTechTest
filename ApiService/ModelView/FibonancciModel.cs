@@ -2,7 +2,7 @@
 {
     public class FibonancciModel
     {
-        public string? Loop { get; set; }
+        public string? NumberList { get; set; }
         public int Toal { get; set; }
     }
 }
